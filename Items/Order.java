@@ -28,9 +28,9 @@ public class Order {
         if (s.equals("TheSwiss"))
             burgerList.add(new TheSwiss());
 
-        if (s.equals("Ball Park"))
+        if (s.equals("BallPark"))
             hotdogList.add(new BallPark());
-        if (s.equals("Basic B"))
+        if (s.equals("BasicB"))
             hotdogList.add(new BasicB());
 
         if (s.equals("Cola"))
@@ -48,18 +48,14 @@ public class Order {
     }
 
     public static Order JSONToOrder(BufferedReader in) throws IOException {
-
         Order order = new Order(in.readLine());
         String line;
         while ((line = in.readLine()) != null) {
             if (!line.equals("[]")) {
-                line.replaceAll("[", "");
-                line.replaceAll("]", "");
-                line.replaceAll(" ", "");
-                String[] objects = line.split(",");
-                for (String s : objects) {
-                    order.addItem(s);
-                }
+                line = line.replace("[", "");
+                line = line.replace("]", "");
+                for (String s : line.split(","))
+                    order.addItem(s.trim());
             }
         }
         return order;

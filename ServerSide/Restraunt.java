@@ -4,6 +4,7 @@ import Items.Order;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.util.ArrayDeque;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -15,9 +16,9 @@ import javax.swing.JMenuItem;
 public class Restraunt extends JFrame {
 
     private JLabel display = new JLabel();
-    private Queue<Order> customerQueue = new PriorityQueue<Order>();
+    private Queue<Order> customerQueue = new ArrayDeque<Order>();
 
-    public Restraunt(String ip) {
+    public Restraunt() {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 200);
@@ -43,6 +44,6 @@ public class Restraunt extends JFrame {
     }
 
     protected void updateOrders(Order order) {
-
+        customerQueue.add(order);
     }
 }

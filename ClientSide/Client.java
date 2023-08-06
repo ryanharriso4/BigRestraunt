@@ -3,6 +3,9 @@ package ClientSide;
 import java.awt.BorderLayout;
 
 import java.awt.Font;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -95,7 +98,7 @@ public class Client extends JFrame {
     }
 
     protected void printOrder() {
-        display.setText(order.toString());
+        display.setText(order.printOrder());
     }
 
     protected void finishOrder() {
@@ -103,6 +106,18 @@ public class Client extends JFrame {
                 JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
         if (button == JOptionPane.NO_OPTION)
             return;
+
+        Socket socket;
+        try {
+            socket = new Socket(serverIP, PORT);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            order.convertToJSON(out);
+            socket.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        System.exit(0);
 
     }
 }
