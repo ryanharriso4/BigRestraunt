@@ -5,7 +5,7 @@ import Items.Toppings.*;
 
 public class BallPark extends Food {
     public BallPark() {
-        setName("Ball Park");
+        setName("BallPark");
         addToppings(new PotatoBread());
         addToppings(new Relish());
         addToppings(new Hotlink());

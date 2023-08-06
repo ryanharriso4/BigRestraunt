@@ -6,7 +6,7 @@ import Items.Toppings.*;
 
 public abstract class Food extends Item {
 
-    private ArrayList<Topping> toppings = new <Topping>ArrayList();
+    private ArrayList<Topping> toppings = new ArrayList();
 
     public void addToppings(Topping t) {
         toppings.add(t);

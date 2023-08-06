@@ -5,7 +5,7 @@ import Items.Toppings.*;
 
 public class TheSwiss extends Food {
     public TheSwiss() {
-        setName("The Swiss");
+        setName("TheSwiss");
         addToppings(new PotatoBread());
         addToppings(new SwissCheese());
         addToppings(new AngusBeef());

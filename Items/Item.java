@@ -1,7 +1,5 @@
 package Items;
 
-import java.util.ArrayList;
-
 public abstract class Item {
     private String name;
     private int price = 0;
@@ -22,11 +20,15 @@ public abstract class Item {
         return price;
     }
 
-    @Override
-    public String toString() {
+    public String printItem() {
         StringBuilder sb = new StringBuilder();
         sb.append(name + ": " + String.format("%.2f", ((double) price / 100)) + "\n\t");
 
         return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
