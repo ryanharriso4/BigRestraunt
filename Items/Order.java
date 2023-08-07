@@ -58,13 +58,12 @@ public class Order {
                     order.addItem(s.trim());
             }
         }
-        System.out.println(order.printOrder());
         return order;
     }
 
     public String printOrder() {
-        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font</br></br><ol>");
         int itemTotal = 0;
+        StringBuffer sb = new StringBuffer();
         for (Item i : burgerList) {
             sb.append("<li>" + i.printItem().replaceAll("\n", "<br/>") + "</li>");
             itemTotal += i.getPrice();
@@ -77,7 +76,7 @@ public class Order {
             sb.append("<li>" + i.printItem().replaceAll("\n", "<br/>") + "</li>");
             itemTotal += i.getPrice();
         }
-        sb.append(String.format("Final Price: %.2f", (double) itemTotal / 100) + "</ol></HTML>");
+        sb.append(String.format("Final Price: %.2f", (double) itemTotal / 100));
 
         return sb.toString();
     }

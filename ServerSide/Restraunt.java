@@ -40,13 +40,17 @@ public class Restraunt extends JFrame {
     }
 
     protected void viewCustomerOrders() {
+
         display.setText("Viewing customer orders");
+        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font</br></br><ol>");
         for (Order o : customerQueue) {
-            display.setText(o.printOrder());
+            sb.append(o.printOrder());
         }
+        sb.append("</ol></HTML>");
+        display.setText(sb.toString());
     }
 
-    protected void updateOrders(Order order) {
+    protected synchronized void updateOrders(Order order) {
         customerQueue.add(order);
     }
 }
