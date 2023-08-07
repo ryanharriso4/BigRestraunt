@@ -98,7 +98,10 @@ public class Client extends JFrame {
     }
 
     protected void printOrder() {
-        display.setText(order.printOrder());
+        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font</br></br><ol>");
+        sb.append(order.printOrder());
+        sb.append("</ol></HTML>");
+        display.setText(sb.toString());
     }
 
     protected void finishOrder() {
