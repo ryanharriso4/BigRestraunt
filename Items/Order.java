@@ -81,4 +81,9 @@ public class Order {
         return sb.toString();
     }
 
+    @Override
+    public String toString() {
+        return clientName + "'s order";
+    }
+
 }

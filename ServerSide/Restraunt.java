@@ -8,10 +8,12 @@ import java.util.ArrayDeque;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 public class Restraunt extends JFrame {
 
@@ -25,10 +27,13 @@ public class Restraunt extends JFrame {
 
         JMenuBar menubar = new JMenuBar();
         JMenuItem viewOrders = new JMenuItem("View Orders");
+        JMenuItem bumpOrder = new JMenuItem("Bump Order");
 
         viewOrders.addActionListener(event -> viewCustomerOrders());
+        bumpOrder.addActionListener(event -> removeOrder());
 
         menubar.add(viewOrders);
+        menubar.add(bumpOrder);
         setJMenuBar(menubar);
 
         display.setFont(new Font("SansSerif", Font.BOLD, 18));
@@ -49,6 +54,18 @@ public class Restraunt extends JFrame {
         }
         sb.append("</HTML>");
         display.setText(sb.toString());
+    }
+
+    public void removeOrder() {
+
+        JComboBox<Object> cb = new JComboBox<>(customerQueue.toArray());
+
+        int button2 = JOptionPane.showConfirmDialog(this, cb, "Which order do you want to bump?",
+                JOptionPane.OK_CANCEL_OPTION);
+        if (button2 == JOptionPane.CANCEL_OPTION)
+            return;
+        customerQueue.remove(cb.getSelectedItem());
+
     }
 
     protected synchronized void updateOrders(Order order) {
