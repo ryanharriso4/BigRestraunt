@@ -12,3 +12,11 @@ The program will consits of a gui client class that allows a user to enter food 
 
 This project will contain multithreading, server sockets, and the swing library. I have a little bit of experience with multi-threading an thus I am excited to learn more. I have a decent understanding of swing however this project will heavily reference from the "Elsa" project I did in CSE 1325. Finally I have been slowly warming up to socket programming for this project however it is the first time that I will be attempting it. 
 
+// HOW TO RUN THE PROGRAM //
+
+1. move to the directory where you have the program
+2. compile using ant( you will have to download ant). Alternatively you could probably just run in the IDE.
+3. run an instance of Server( java ServerSide.Server), run up to 4 instances of ClientRunner( java ClientSide.ClientRunner).
+4. when running ClientRunner you will need to type your computers IP adress( you can check this by using IPConfig in terminal).
+5. add items in the Client program then place your order.
+6. now items from the clients should appear on the Restraunt gui.
