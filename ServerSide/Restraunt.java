@@ -42,11 +42,12 @@ public class Restraunt extends JFrame {
     protected void viewCustomerOrders() {
 
         display.setText("Viewing customer orders");
-        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font</br></br><ol>");
+        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font></p><br/>");
         for (Order o : customerQueue) {
             sb.append(o.printOrder());
+            sb.append("</br></br>");
         }
-        sb.append("</ol></HTML>");
+        sb.append("</HTML>");
         display.setText(sb.toString());
     }
 

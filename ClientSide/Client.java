@@ -26,10 +26,10 @@ public class Client extends JFrame {
 
     private JLabel display = new JLabel();
 
-    public Client(String ip) {
+    public Client(String ip, String clientName) {
 
         serverIP = ip;
-        order = new Order("name");
+        order = new Order(clientName);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 200);
         // getContentPane().setBackground(Color.BLACK);
@@ -98,9 +98,9 @@ public class Client extends JFrame {
     }
 
     protected void printOrder() {
-        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font</br></br><ol>");
+        StringBuilder sb = new StringBuilder("<HTML><p><font size = +2> MENU </font></p><br/>");
         sb.append(order.printOrder());
-        sb.append("</ol></HTML>");
+        sb.append("</HTML>");
         display.setText(sb.toString());
     }
 

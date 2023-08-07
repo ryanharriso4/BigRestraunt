@@ -63,21 +63,21 @@ public class Order {
 
     public String printOrder() {
         int itemTotal = 0;
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
+        sb.append("<p><font size = +2><strong>" + clientName + "</font></strong></p>");
         for (Item i : burgerList) {
-            sb.append("<li>" + i.printItem().replaceAll("\n", "<br/>") + "</li>");
+            sb.append("<p>" + i.printItem().replaceAll("\n", "<br/>") + "</p>");
             itemTotal += i.getPrice();
         }
         for (Item i : hotdogList) {
-            sb.append("<li>" + i.printItem().replaceAll("\n", "<br/>") + "</li>");
+            sb.append("<p>" + i.printItem().replaceAll("\n", "<br/>") + "</p>");
             itemTotal += i.getPrice();
         }
         for (Item i : drinkList) {
-            sb.append("<li>" + i.printItem().replaceAll("\n", "<br/>") + "</li>");
+            sb.append("<p>" + i.printItem().replaceAll("\n", "<br/>") + "</p>");
             itemTotal += i.getPrice();
         }
         sb.append(String.format("Final Price: %.2f", (double) itemTotal / 100));
-
         return sb.toString();
     }
 
