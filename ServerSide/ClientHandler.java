@@ -24,7 +24,7 @@ public class ClientHandler implements Runnable {
     @Override
     public void run() {
         try {
-            Order.JSONToOrder(in);
+            restraunt.updateOrders(Order.JSONToOrder(in));
         } catch (IOException e) {
             System.err.println(e);
         }

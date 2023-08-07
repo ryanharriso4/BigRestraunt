@@ -58,6 +58,7 @@ public class Order {
                     order.addItem(s.trim());
             }
         }
+        System.out.println(order.printOrder());
         return order;
     }
 

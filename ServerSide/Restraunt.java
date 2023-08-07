@@ -41,6 +41,9 @@ public class Restraunt extends JFrame {
 
     protected void viewCustomerOrders() {
         display.setText("Viewing customer orders");
+        for (Order o : customerQueue) {
+            display.setText(o.printOrder());
+        }
     }
 
     protected void updateOrders(Order order) {
