@@ -17,5 +17,6 @@ This project will contain multithreading, server sockets, and the swing library.
 1. move to the directory where you have the program
 2. compile using ant( you will have to download ant). Alternatively you could probably just run in the IDE.
 3. run an instance of Server( java ServerSide.Server), run up to 4 instances of ClientRunner( java ClientSide.ClientRunner).
-4. add items in the Client program then place your order.
-5. now items from the clients should appear on the Restraunt gui.
+4. when running ClientRunner you will need to type your computers IP adress( you can check this by using IPConfig in terminal).
+5. add items in the Client program then place your order.
+6. now items from the clients should appear on the Restraunt gui.
