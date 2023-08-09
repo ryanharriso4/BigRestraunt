@@ -51,6 +51,7 @@ public class Restraunt extends JFrame {
         for (Order o : customerQueue) {
             sb.append(o.printOrder());
             sb.append("</br></br>");
+            sb.append("<hr>");
         }
         sb.append("</HTML>");
         display.setText(sb.toString());
